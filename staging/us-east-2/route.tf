@@ -21,9 +21,9 @@ resource "aws_route_table_association" "pub_sub_2" {
   route_table_id = aws_route_table.pub_rtr.id
 }
 
- ######################## Private Route Table ####################
+######################## Private Route Table ####################
 
- resource "aws_route_table" "pri_rtr" {
+resource "aws_route_table" "pri_rtr" {
   vpc_id = aws_vpc.staging.id
 
   route {
