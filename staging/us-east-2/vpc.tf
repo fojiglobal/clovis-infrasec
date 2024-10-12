@@ -12,7 +12,13 @@ module "staging" {
   private_sg_ingress = local.private-sg-ingress
   bastion_sg_ingress = local.bastion-sg-ingress
   bastion_sg_egress = local.bastion-sg-egress
+  alb_ssl_cert_arn = data.aws_acm_certificate.alb_cert.arn
+  alb_ssl_profile = "ELBSecurityPolicy-2016-08"
+  dns_zone = data.aws_route53_zone.fojiapps.zone_id
+  dns_name = "stage.fojiapps.com"
+  alb_rule_condition = ["stage.fojiapps.com", "www.stage.fojiapps"]
 }
+
 
 output "vpc_id" {
   value = module.staging.vpc_id
