@@ -114,6 +114,7 @@ jobs:
             }
 
   terraform-snyk-scan:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
     needs: tfplan
     runs-on: ubuntu-latest
     steps:
@@ -128,7 +129,7 @@ jobs:
 
 
   tfapply:
-    if: always() && github.event_name == 'push'
+    if: github.event_name == 'push'
     needs: terraform-snyk-scan
     runs-on: ubuntu-latest
     steps:
