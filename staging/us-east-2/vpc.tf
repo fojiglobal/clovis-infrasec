@@ -6,7 +6,7 @@ module "staging" {
   private_subnets    = local.private_subnets
   pub-sub-name       = "pub-sub-1"
   user_data          = filebase64("web.sh")
-  ami_id             = "036841078a4b68e14"
+  ami_id             = "ami-036841078a4b68e14"
   public_sg_egress   = local.public-sg-egress
   public_sg_ingress  = local.public-sg-ingress
   private_sg_egress  = local.private-sg-egress
