@@ -1,5 +1,5 @@
 module "staging" {
-  source             = "github.com/fojiglobal/clovis-tf-modules//staging?ref=1.1.0" #"./modules"
+  source             = "github.com/fojiglobal/clovis-tf-modules//staging?ref=v1.1.1" 
   vpc_cidr           = local.vpc_cidr
   env                = local.env
   public_subnets     = local.public_subnets
